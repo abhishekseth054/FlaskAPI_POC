@@ -1,0 +1,444 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
+
+    <script src="{{ url_for('static', filename='assets/js/jQuery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/bootstrap/js/popper.js') }}"></script>
+    {% endblock %}
+</head>
+
+<body>
+
+    <div class="top-nav-container">
+            <header class="header-container">
+        <!-- <a href="{{ url_for('index') }}"><h1 class="title">Pathshala</h1></a> -->
+        <div class="row dashboard-top-nav">
+            <div class="col-sm-3 logo">
+                <h5><i class="fa fa-book"></i>PATHSHALA</h5>
+            </div>
+            <div class="col-sm-4 top-search">
+                <div class="search">
+                    <i class="fa fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+            <div class="col-sm-5 notification-area">
+                <ul class="top-nav-list">
+                    <li class="notification dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge nav-badge">3</span>
+                        </a>
+                        <ul class="dropdown-menu notification-list">
+                            <li>
+                                <div class="list-msg">
+                                    <div class="col-xs-2 icon clear-padding">
+                                        <i class="fa fa-trophy"></i>
+                                    </div>
+                                    <div class="col-sm-10 desc">
+                                        <h5><a href="#">Upcoming Sports Meet</a></h5>
+                                        <h6><i class="fa fa-clock-o"></i> 10 min ago</h6>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-msg">
+                                    <div class="col-xs-2 icon clear-padding">
+                                        <i class="fa fa-paint-brush"></i>
+                                    </div>
+                                    <div class="col-sm-10 desc">
+                                        <h5><a href="#">Fine art workshop</a></h5>
+                                        <h6><i class="fa fa-clock-o"></i> 1 hour ago</h6>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-msg">
+                                    <div class="col-xs-2 icon clear-padding">
+                                        <i class="fa fa-birthday-cake"></i>
+                                    </div>
+                                    <div class="col-sm-10 desc">
+                                        <h5><a href="#">Annual fest</a></h5>
+                                        <h6><i class="fa fa-clock-o"></i> 1 day ago</h6>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-msg">
+                                    <div class="col-xs-2 icon clear-padding">
+                                        <i class="fa fa-trophy"></i>
+                                    </div>
+                                    <div class="col-sm-10 desc">
+                                        <h5><a href="#">Upcoming Sports Meet</a></h5>
+                                        <h6><i class="fa fa-clock-o"></i> 10 min ago</h6>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="all-notifications">
+                                    <a href="#">VIEW ALL NOTIFICATIONS</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="message dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-comment-o"></i>
+                            <span class="badge nav-badge">5</span>
+                        </a>
+                        <ul class="dropdown-menu notification-list">
+                            <li>
+                                <div class="list-msg">
+                                    <div class="col-xs-2 image clear-padding">
+                                        <img src="assets/img/parent/parent2.jpg" alt="user" />
+                                    </div>
+                                    <div class="col-sm-10 desc">
+                                        <h5><a href="#">John Doe</a></h5>
+                                        <p>Lorem Ipsum is simply dummy text.</p>
+                                        <h6><i class="fa fa-clock-o"></i> 1 day ago</h6>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-msg">
+                                    <div class="col-xs-2 image clear-padding">
+                                        <img src="assets/img/parent/parent1.jpg" alt="user" />
+                                    </div>
+                                    <div class="col-sm-10 desc">
+                                        <h5><a href="#">Lenore Doe</a></h5>
+                                        <p>Lorem Ipsum is simply dummy text.</p>
+                                        <h6><i class="fa fa-clock-o"></i> 1 day ago</h6>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="all-notifications">
+                                    <a href="#">VIEW ALL MESSAGES</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="user dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span><img src="assets/img/parent/parent2.jpg" alt="user">JOHN DOE<span class="caret"></span></span>
+                        </a>
+                        <ul class="dropdown-menu notification-list">
+                            <li>
+                                <a href="#"><i class="fa fa-cogs"></i> SETTINGS</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-users"></i> USER PROFILE</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-key"></i> CHANGE PASSWORD</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-cogs"></i> SETTINGS</a>
+                            </li>
+                            <li>
+                                <div class="all-notifications">
+                                    <a href="#">LOGOUT</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    </div>
+
+    <div class="left-nav-container">
+        <div class="sidebar-nav-wrapper">
+            <div class="parent-wrapper" id="outer-wrapper">
+                <!-- SIDE MENU -->
+                <div class="sidebar-nav-wrapper" id="sidebar-wrapper">
+                    <ul class="sidebar-nav">
+                        <li>
+                            <a href="Dashboard.aspx"><i class="fa fa-home menu-icon"></i> Dashboard</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-users menu-icon"></i> STUDENTS <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="AddStudent.aspx"><i class="fa fa-caret-right"></i>New Student</a>
+                                </li>
+                                <li>
+                                    <a href="SearchStudent.aspx"><i class="fa fa-caret-right"></i>Search STUDENT </a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-caret-right"></i>Recent BirthDay </a>
+                                </li>
+                                <li>
+                                    <a href="FeeFreeStudent.aspx"><i class="fa fa-caret-right"></i>Fee Free Students
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-caret-right"></i>Achievements </a>
+                                </li>
+                                <li>
+                                    <a href="StudentDetails.aspx"><i class="fa fa-caret-right"></i>Student Details </a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-user-secret menu-icon"></i> TEACHERS <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="AddTeacher.aspx"><i class="fa fa-caret-right"></i>New Teacher</a>
+                                </li>
+                                <li>
+                                    <a href="ClassTeacher.aspx"><i class="fa fa-caret-right"></i>Class Teacher</a>
+                                </li>
+                                <li>
+                                    <a href="StaffLeave.aspx"><i class="fa fa-caret-right"></i>Staff Leaves</a>
+                                </li>
+                                <li>
+                                    <a href="TeacherList.aspx"><i class="fa fa-caret-right"></i>Edit/Delete Teacher</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-file-o menu-icon"></i> CLASSES <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="admin-add-class.html"><i class="fa fa-caret-right"></i>ADD/Edit CLASS</a>
+                                </li>
+                                <li>
+                                    <a href="admin-add-section.html"><i class="fa fa-caret-right"></i>Class Wise
+                                        Student </a>
+                                </li>
+                                <li>
+                                    <a href="admin-add-class.html"><i class="fa fa-caret-right"></i>Class Time Table</a>
+                                </li>
+                                <li>
+                                    <a href="admin-add-section.html"><i class="fa fa-caret-right"></i>Now Teaching</a>
+                                </li>
+                                <li>
+                                    <a href="admin-add-section.html"><i class="fa fa-caret-right"></i>Class Promotion</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-book menu-icon"></i> SUBJECTS <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="admin-add-subject.html"><i class="fa fa-caret-right"></i>ADD/Subject</a>
+                                </li>
+                                <li>
+                                    <a href="admin-add-subject.html"><i class="fa fa-caret-right"></i>Class & Subject</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-graduation-cap"></i> Exam & Marks <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="teacher-attendence-report.html"><i class="fa fa-caret-right"></i>Add/Edit
+                                        Marks</a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Test Paper
+                                        Marks</a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Test Paper
+                                        Reports</a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Progrss Marks</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-signal"></i> Attendance <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="teacher-attendence-report.html"><i class="fa fa-caret-right"></i>Add/Edit
+                                        Attendance</a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Absentees
+                                        Report</a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Attendance
+                                        Status</a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Single Student
+                                        Report</a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Attendance
+                                        Report</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-inr"></i> Fee <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="teacher-attendence-report.html"><i class="fa fa-caret-right"></i>Monthly
+                                        Fee</a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Classwise
+                                        Monthly Fee </a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Special Fee
+                                        Collection </a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Montly Fee
+                                        History /Cancel </a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Unpaid Student
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bus"></i> Tranportation <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="teacher-attendence-report.html"><i class="fa fa-caret-right"></i>ATTENDENCE</a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>MARKS</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-download"></i> Report <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="teacher-attendence-report.html"><i class="fa fa-caret-right"></i>Student
+                                        By Class</a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Class Strength</a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Fee Report By
+                                        Class</a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Fee Report
+                                        Summary</a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Special Fee
+                                        Report</a>
+                                </li>
+                                <li>
+                                    <a href="teacher-marks-report.html"><i class="fa fa-caret-right"></i>Tranportation</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li>
+                            <a href="message.html"><i class="fa fa-envelope menu-icon"></i> MY MESSAGES</a>
+                        </li>
+                        <li>
+                            <a href="admin-add-announcement.html"><i class="fa fa-bullhorn menu-icon"></i>
+                                ANNOUNCEMENTS</a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-calendar menu-icon"></i> TIMETABLE <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="admin-create-timetable.html"><i class="fa fa-caret-right"></i>CREATE</a>
+                                </li>
+                                <li>
+                                    <a href="admin-class-timetable.html"><i class="fa fa-caret-right"></i>VIEW</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <article>
+            
+
+        </article>
+        {% block content %}
+        {% endblock %}
+        {% block sidebar %}
+                <aside>
+                    <h3>aside</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+                </aside>
+                {% endblock %}
+
+    </div>
+
+    <div class="footer-container">
+        <footer class="wrapper">
+            <div class="menu-togggle-btn">
+                <a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
+            </div>
+            <div class="dash-footer col-lg-12">
+                <p>Copyright Pathshala</p>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>
